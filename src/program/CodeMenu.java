@@ -13,7 +13,7 @@ public class CodeMenu {
         switch (option) {
             case 1 -> {
                 StringCode stringCode = new StringCode();
-                stringCode.hello();
+                stringCode.showAllStringCodeMenuAndProcess();
                 break;
             }
 
