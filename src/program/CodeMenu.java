@@ -5,6 +5,7 @@ import static Constants.Constant.breakCase;
 public class CodeMenu {
     public void showAllCodeMenu() {
         System.out.println("1. String Programs.");
+
         System.out.println(breakCase +". Exit.");
     }
 
@@ -17,7 +18,7 @@ public class CodeMenu {
             }
 
             case breakCase -> {
-                System.out.println("Program Break");
+                System.out.println("Exiting the Code flow.");
                 break;
             }
             default -> System.out.println("Invalid option");

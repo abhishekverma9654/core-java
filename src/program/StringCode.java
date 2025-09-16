@@ -57,12 +57,11 @@ public class StringCode {
                 }
 
                 case breakCase -> {
-                    System.out.println("Program Break");
+                    System.out.println("Out from String operations");
                     break;
                 }
                 default -> System.out.println("Invalid option");
             }
         } while (option != 100);
-        sc.close();
     }
 }
