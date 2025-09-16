@@ -1,4 +1,4 @@
-import data.CodeMenu;
+import program.CodeMenu;
 import java.util.Scanner;
 
 public class Main {
