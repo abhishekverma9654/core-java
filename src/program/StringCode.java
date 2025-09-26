@@ -161,15 +161,17 @@ public class StringCode {
     }
 
     private void stringProgram8(Scanner sc) {
-        System.out.println("==Enter String==\n");
+        System.out.println("==Enter String==");
         String string = sc.nextLine();
-        System.out.println("==Enter Inital Index==\n");
+        System.out.println("==Enter Inital Index==");
         int initalIndex = sc.nextInt();
-        System.out.println("==Enter End Index==\n");
+        System.out.println("==Enter End Index==");
         int endIndex = sc.nextInt();
-        if (initalIndex > 0 && endIndex < string.length()) {
+        // The parameters mean "from - including, to - excluding".
+        // The first character in a String has index 0, the second character has index 1 etc. The last character in the string has has the index String.length() - 1.
+        if (string != null && string != "" && initalIndex >= 0 && endIndex <= string.length()) {
             String substring = string.substring(initalIndex, endIndex);
-            System.out.println("==Substring of String with the given index is ==" + substring);
+            System.out.println("==Substring of String with the given index is == " + substring);
         } else if (initalIndex < 0) {
             System.out.println("==Initial index is can not be less than 0 == "+ initalIndex);
         } else if (endIndex > string.length()) {
