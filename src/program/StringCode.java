@@ -5,6 +5,9 @@ import java.util.Scanner;
 import static Constants.Constant.breakCase;
 
 public class StringCode {
+
+    // Referenced from https://jenkov.com/tutorials/java/strings.html
+
     public void showAllStringCodeMenuAndProcess(){
         System.out.println("==Hello these are String programs==");
         Scanner sc = new Scanner(System.in);
@@ -18,6 +21,8 @@ public class StringCode {
             System.out.println("6. Default Concatenating by method.");
             System.out.println("7. Length of String");
             System.out.println("8. Get substring of a given string");
+            System.out.println("9. Search in the String with help of indexOf substring");
+            System.out.println("10. Search in the String with help of regular exp. operator like.");
 
             System.out.println(breakCase +". Exit.");
             option = selectOptionAndProcess(sc.nextInt(), sc);
@@ -66,6 +71,18 @@ public class StringCode {
             case 8 -> {
                 sc.nextLine();
                 stringProgram8(sc);
+                break;
+            }
+
+            case 9 -> {
+                sc.nextLine();
+                stringProgram9(sc);
+                break;
+            }
+
+            case 10 -> {
+                sc.nextLine();
+                stringProgram10(sc);
                 break;
             }
 
@@ -176,6 +193,30 @@ public class StringCode {
             System.out.println("==Initial index is can not be less than 0 == "+ initalIndex);
         } else if (endIndex > string.length()) {
             System.out.println("==end index is can not be grater than length of string == "+ string.length());
+        }
+    }
+
+    private void stringProgram9(Scanner sc) {
+        System.out.println("==Enter String==");
+        String string = sc.nextLine();
+        System.out.println("==Enter substring to find index==");
+        String subString = sc.nextLine();
+        int index = string.indexOf(subString);
+
+        System.out.println("==Index of String is == " + index);
+    }
+
+    private void stringProgram10(Scanner sc) {
+        System.out.println("==Enter String==");
+        String string = sc.nextLine();
+        System.out.println("==Enter search string==");
+        String keyword = sc.nextLine();
+
+        boolean match = string.matches(".*" + keyword + ".*");
+        if (match) {
+            System.out.println("==Searched keyword found in the String==");
+        } else {
+            System.out.println("==Searched keyword not found in the String==");
         }
     }
 }
